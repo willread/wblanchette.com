@@ -3,7 +3,7 @@ safe: false
 source: ./
 lsi: false
 permalink: /blog/:title
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", edit, publish, build]
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", edit, publish, build, src]
 pygments: true
 
 title: Collective Cognition
