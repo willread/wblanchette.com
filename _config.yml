@@ -1,0 +1,24 @@
+auto: true
+safe: false
+source: ./
+lsi: false
+permalink: /blog/:title
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", edit, publish, build]
+pygments: true
+
+title: Collective Cognition
+tagline:
+author:
+  name: William Blanchette
+  email: wb@collectivecognition.com
+  github: collectivecognition
+  twitter: wblanchette
+  feedburner: 
+
+url: http://wblanchette.com
+
+mini_magick:
+    thumbnail:
+        source: images/blog/original
+        destination: images/blog/thumbnails
+        resize: "630x400"
