@@ -2,23 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head profile="http://gmpg.org/xfn/11">
 
-<base href="{{site.url}}"/>
+<title>Will Blanchette</title>
 
-<title>{% if page.title %} {{ page.title }} | {% endif %} Collective Cognition</title>
+<base href="{{site.url}}"/>
 
 <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
 <meta name="robots" content="index, follow" />
 <meta charset=utf-8 />
 
-<meta name="description" content="Collective Cognition designs and develops engaging web and mobile experiences." />
-<meta name="keywords" content="collective, cognition, web, design, developemtn, css, html, site, mobile, apps, apple, iphone, ios" />
-<meta name="author" content="William Blanchette, Collective Cognition" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="William Read" />
 
 <script type="text/javascript" src="/js/shadowbox-inlined-min.js"></script>
 <script type="text/javascript">Shadowbox.init();</script>
 
-<link rel="shortcut icon" href="{{site.production_url}}/favicon.ico" />
-<link rel="stylesheet" href="{{site.production_url}}/css/style.css" media="screen,projection" type="text/css" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/css/style.css" media="screen,projection" type="text/css" />
 
 <!--<link rel="alternate" href="http://collectivecognition.com/feed/" title="RSS Feed" type="application/rss+xml" />-->
 
@@ -28,20 +28,22 @@
 
 <body>
 
-	<div id='wrapper'>
+	<div id="wrapper">
 	
-		<div class="bar light">
-			<div class="container">
-				<div id="content">
-					{{content}}
-				</div>
-			</div>
-		</div>
+		<img id="logo" src="/images/logo.png" width="55" height="45" alt="William Read"/>
+	
+		<ul id="menu">
+			<li><a href="">Blog</a></li>
+			<li><a href="">Projects</a></li>
+			<li><a href="">CV</a></li>
+			<li><a href="">Links</a></li>
+		</ul>
+		{{content}}
 		
-		<div id='footer'>&copy; {{site.time | date: "%Y"}} Collective Cognition, all rights reserved</div>
+		<div id="footer">&copy; 2013 Collective Cognition, all rights reserved</div>
 
 	</div>
 
 </body>
 
-</html>
+</html>	
