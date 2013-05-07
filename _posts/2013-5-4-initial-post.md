@@ -1,3 +1,3 @@
-<a href="http://prose.io/">Prose.io</a> is a promising tool for managing text-based files in your Github repositories, with an emphasis on static / jekyll sites hosted on Github pages.
+[Prose.io](http://www.prose.io) is a promising tool for managing text-based files in your Github repositories, with an emphasis on static / jekyll sites hosted on Github pages.
 
 Based on a quick glance I can see it very quickly becoming a part of my workflow. While checking in a new blog post to one of my sites is a nearly painless process now, Prose looks to make it even easier, with a very nice UI to boot.
