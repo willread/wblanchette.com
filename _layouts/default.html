@@ -16,6 +16,12 @@
 
 <script type="text/javascript" src="{{site.url}}/js/shadowbox-inlined-min.js"></script>
 <script type="text/javascript">Shadowbox.init();</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/json2/20121008/json2.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+<script type="text/javascript" src="{{site.url}}/js/github.js"></script>
+<script type="text/javascript" src="{{site.url}}/js/base64.js"></script>
 
 <link rel="shortcut icon" href="{{site.url}}/favicon.ico" />
 <link rel="stylesheet" href="{{site.url}}/css/bootstrap.css" media="screen,projection" type="text/css" />
@@ -25,6 +31,24 @@
 <!--<link rel="alternate" href="http://collectivecognition.com/feed/" title="RSS Feed" type="application/rss+xml" />-->
 
 <link href="https://plus.google.com/112066706442483184529/" rel="publisher" />
+
+<script>
+	$(function(){
+		var github = new Github({
+			username: "collectivecognition",
+			password: "m3t4kzbtr",
+			auth: "basic"
+		});
+		var repo = github.getRepo("collectivecognition", "wblanchette.com");
+		repo.write("gh-pages", "test", "hello world", "Added entry.", function(err){
+		
+		});
+		repo.read("gh-pages", "index.html", function(err, data){
+			console.log(err);
+			console.log(data);
+		});
+	});
+</script>
 
 </head>
 
@@ -42,7 +66,7 @@
 		</ul>
 		{{content}}
 		
-		<div id="footer">&copy; 2013 Collective Cognition, all rights reserved</div>
+		<div id="footer">&copy; 2013 William Blanchette, all rights reserved</div>
 
 	</div>
 
