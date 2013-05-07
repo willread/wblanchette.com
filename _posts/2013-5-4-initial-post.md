@@ -1,1 +1,3 @@
-for f in `ls | egrep "\.jpg|\.jpeg|\.gif|\.png$"`; do echo -e ".`echo $f | tr . "_"` {\n\twidth: `identify -format '%w' $f`px;\n\theight: `identify -format '%h' $f`px;\n\tbackground: url(data:image/${f#*.};base64,"; openssl base64 -in $f | tr -d "\n" | tr -d "\r"; echo -e ");\n}\n"; done > images.css
+<a href="http://prose.io/">Prose.io</a> is a promising tool for managing text-based files in your Github repositories, with an emphasis on static / jekyll sites hosted on Github pages.
+
+Based on a quick glance I can see it very quickly becoming a part of my workflow. While checking in a new blog post to one of my sites is a nearly painless process now, Prose looks to make it even easier, with a very nice UI to boot.
