@@ -43,7 +43,7 @@
 		var repo = github.getRepo("collectivecognition", "wblanchette.com");
 		repo.read("gh-data", "lists.json", function(err, data){
 			console.log(err);
-			console.log(data);
+			console.log(JSON.parse(data));
 		});
 	});
 </script>
