@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0  Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+
+<title>Will Blanchette</title>
+
+<base href="{{site.url}}"/>
+
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+<meta name="robots" content="index, follow" />
+<meta charset=utf-8 />
+
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="William Blanchette" />
+
+<script type="text/javascript" src="{{site.url}}/js/shadowbox-inlined-min.js"></script>
+<script type="text/javascript">Shadowbox.init();</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/json2/20121008/json2.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/2.2.1/knockout-min.js"></script>
+<script type="text/javascript" src="{{site.url}}/js/github.js"></script>
+<script type="text/javascript" src="{{site.url}}/js/base64.js"></script>
+
+<link rel="shortcut icon" href="{{site.url}}/favicon.ico" />
+<link rel="stylesheet" href="{{site.url}}/css/bootstrap.css" media="screen,projection" type="text/css" />
+<link rel="stylesheet" href="{{site.url}}/css/flat-ui.css" media="screen,projection" type="text/css" />
+<link rel="stylesheet" href="{{site.url}}/css/style.css" media="screen,projection" type="text/css" />
+
+<!--<link rel="alternate" href="http://collectivecognition.com/feed/" title="RSS Feed" type="application/rss+xml" />-->
+
+<link href="https://plus.google.com/112066706442483184529/" rel="publisher" />
+
+<script>
+	$(function(){
+		var github = new Github({
+			username: "collectivecognition",
+			password: prompt("password"),
+			auth: "basic"
+		});
+		var repo = github.getRepo("collectivecognition", "wblanchette.com");
+		repo.write("gh-pages", "test", "hello world", "Added entry.", function(err){
+		
+		});
+		repo.read("gh-data", "index.html", function(err, data){
+			console.log(err);
+			console.log(data);
+		});
+	});
+</script>
+
+</head>
+
+<body>
+
+	<div id="wrapper">
+	
+		<img id="logo" src="{{site.url}}/images/logo.png" width="55" height="45" alt="William Read"/>
+	
+		<ul id="menu">
+			<li><a href="">Blog</a></li>
+			<li><a href="">Projects</a></li>
+			<li><a href="">CV</a></li>
+			<li><a href="">Links</a></li>
+		</ul>
+		{{content}}
+		
+		<div id="footer">&copy; 2013 William Blanchette, all rights reserved</div>
+
+	</div>
+
+</body>
+
+</html>	
