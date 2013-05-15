@@ -20,6 +20,7 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/json2/20121008/json2.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/2.2.1/knockout-min.js"></script>
 <script type="text/javascript" src="{{site.url}}/js/github.js"></script>
 <script type="text/javascript" src="{{site.url}}/js/base64.js"></script>
 
@@ -43,7 +44,7 @@
 		repo.write("gh-pages", "test", "hello world", "Added entry.", function(err){
 		
 		});
-		repo.read("gh-pages", "index.html", function(err, data){
+		repo.read("gh-data", "index.html", function(err, data){
 			console.log(err);
 			console.log(data);
 		});
