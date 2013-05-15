@@ -41,10 +41,7 @@
 			auth: "basic"
 		});
 		var repo = github.getRepo("collectivecognition", "wblanchette.com");
-		repo.write("gh-pages", "test", "hello world", "Added entry.", function(err){
-		
-		});
-		repo.read("gh-data", "index.html", function(err, data){
+		repo.read("gh-data", "lists.json", function(err, data){
 			console.log(err);
 			console.log(data);
 		});
