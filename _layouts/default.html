@@ -33,21 +33,6 @@
 
 <link href="https://plus.google.com/112066706442483184529/" rel="publisher" />
 
-<script>
-	$(function(){
-		var github = new Github({
-			username: "collectivecognition",
-			password: prompt("password"),
-			auth: "basic"
-		});
-		var repo = github.getRepo("collectivecognition", "wblanchette.com");
-		repo.read("gh-data", "lists.json", function(err, data){
-			console.log(err);
-			console.log(JSON.parse(data));
-		});
-	});
-</script>
-
 </head>
 
 <body>
