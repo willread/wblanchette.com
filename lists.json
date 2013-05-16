@@ -25,6 +25,10 @@ callback({
       {
         "platform": "Xbox 360",
         "name": "Mass Effect 3"
+      },
+      {
+        "platform": "PC",
+        "name": "Name"
       }
     ]
   },
