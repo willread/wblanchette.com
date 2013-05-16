@@ -1,0 +1,61 @@
+{
+  "Video Games": {
+    "keys": {
+      "platform": [
+        "PS2",
+        "PS3",
+        "Xbox",
+        "Xbox 360",
+        "PC",
+        "Nintendo DS",
+        "Nintendo 3DS",
+        "Nintendo Wii"
+      ],
+      "name": "Name"
+    },
+    "items": [
+      {
+        "platform": "PS2",
+        "name": "Dragon Quest 8"
+      },
+      {
+        "platform": "PS3",
+        "name": "Metal Gear Solid 4"
+      }
+    ]
+  },
+  "Movies": {
+    "keys": {
+      "name": "Name",
+      "rating": 5
+    },
+    "items": [
+      {
+        "name": "Good Will Hunting",
+        "rating": 6
+      },
+      {
+        "name": "Visioneers",
+        "rating": 8.5
+      }
+    ]
+  },
+  "Beers": {
+    "keys": {
+      "rating": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "name": "Beer Name"
+    },
+    "items": [
+      {
+        "rating": 4,
+        "name": "Corona"
+      }
+    ]
+  }
+} 

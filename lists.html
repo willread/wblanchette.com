@@ -1,0 +1,152 @@
+---
+layout: default
+---
+	<div class="box">
+		<div id="lists"></div>
+	</div>
+	
+	<script>
+		$(function(){
+			var edit = true;
+			
+			// Connect to github
+			var github;
+			if(edit){
+				github = new Github({
+					username: "collectivecognition",
+					password: prompt("password"),
+					auth: "basic"
+				});
+				var repo = github.getRepo("collectivecognition", "wblanchette.com");
+			}
+			
+			// data = JSON.parse(data); // Parse JSON
+			// All encompassing model to hold all lists and manage saving / loading
+			var ListsModel = function(){
+				this.lists = ko.observableArray();
+				var lists = this.lists; // For reference in child models / views
+				var listsModel = this; // For reference in child models / views
+				
+				// repo.read("gh-data", "lists.json", function(err, data){
+				// $.getJSON("https://raw.github.com/collectivecognition/wblanchette.com/gh-data/lists.json", {}, function(data, textStatus, jqXHR){
+				$.getJSON("{{site.url}}/lists.json", {}, function(data, textStatus, jqXHR){
+				
+					// Iterate over lists
+					for(key in data){
+						
+						// Make sure we're not dealing with a prototype property
+						if(data.hasOwnProperty(key)){
+						
+							var keys = data[key].keys;
+							var items = data[key].items;
+							
+							// Generate item model
+							var ItemModel = (function(keys){
+								return function(values){
+									if(!values) values = {};
+									for(key in keys){
+										switch(typeof keys[key]){
+											case "object":
+												// TODO: Check properly for array (.length?)
+												if(values && values[key])
+													if($.inArray(values[key], keys[key]) > -1)
+														this[key] = ko.observable(values[key]);
+													else
+														this[key] = ko.observable(keys[key][0]);
+												else
+													this[key] = ko.observable(keys[key][0]);
+											break;
+											default:
+												this[key] = ko.observable(values[key] || keys[key]);
+											break;
+										}
+									}
+								}
+							})(keys);
+							
+							// Generate list model
+							var ListModel = (function(name, keys, items, ItemModel){
+								return function(){
+									var scope = this;
+									this.ItemModel = ItemModel;
+									this.name = name;
+									this.keys = keys;
+									for(key in keys){
+										switch(typeof keys[key]){
+											case "object":
+												// Save lists of possible values for this key
+												// TODO: Check properly for array (.length?)
+												scope[key] = keys[key];
+											break;
+											default:
+												// Noop
+											break;
+										}
+									}
+									scope.items = ko.observableArray();
+									for(var i = 0; i < items.length; i++){
+										var item = new this.ItemModel(items[i]);
+										scope.items.push(item);
+									}
+									this.addItem = function(){
+										scope.items.push(new this.ItemModel());
+									}
+									this.save = function(){
+										listsModel.save();
+									}
+								}
+							})(key, keys, items, ItemModel);
+							
+							// Generate view
+							var view = "<div><table><thead><tr>";
+							for(k in keys){
+								view += "<th>" + k + "</th>";
+							}
+							view += "</tr></thead><tbody data-bind='foreach: items'><tr>";
+							for(k in keys){
+								if(edit){
+									if(typeof keys[k] == "object") // TODO: Check properly for array (.length?)
+										view += "<td><select data-bind='options: $root." + k + ", value: " + k + "'></select></td>";
+									else
+										view += "<td><input data-bind='value: " + k + "'/></td>";
+								}else{
+									view += "<td data-bind='text: " + k + "'></td>";
+								}
+							}
+							view += "</tr></tbody></table>";
+							if(edit){
+								view += "<button data-bind='click: addItem'>Add Item</button>";
+								view += "<button data-bind='click: save'>Save</button>";
+							}
+							view += "</div>";
+							
+							// Add markup to lists div
+							view = $(view);
+							$("#lists").append(view);
+							
+							// Apply knockout bindings
+							var listModel = new ListModel(key);
+							ko.applyBindings(listModel, $(view)[0]);
+						}
+						
+						// Add list to parent model
+						lists.push(listModel);	
+					}
+				});
+				// Save all lists to JSON file
+				this.save = function(){
+					var json = {};
+					for(var l = 0; l < lists().length; l++){
+						json[lists()[l].name] = {
+							keys: ko.toJS(lists()[l].keys),
+							items: ko.toJS(lists()[l].items())
+						}
+					}
+					json = JSON.stringify(json, undefined, 2);
+					repo.write("gh-pages", "lists.json", json, "Updated lists", function(err){});
+				}
+			}
+			ko.applyBindings(new ListsModel());
+
+		});
+	</script>
