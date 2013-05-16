@@ -41,7 +41,7 @@ callback({
       {
         "publisher": "Rio Grande Games",
         "title": "Carcasonne",
-        "status": "Want"
+        "status": "Have"
       },
       {
         "publisher": "Mayfair Games",
@@ -56,6 +56,11 @@ callback({
       {
         "publisher": "999 Games",
         "title": "Pandemic",
+        "status": "Have"
+      },
+      {
+        "publisher": "Unknown",
+        "title": "Zombie Dice",
         "status": "Have"
       }
     ]
