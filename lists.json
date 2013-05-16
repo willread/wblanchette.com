@@ -37,6 +37,27 @@ callback({
         "Want"
       ]
     },
-    "items": []
+    "items": [
+      {
+        "publisher": "Rio Grande Games",
+        "title": "Carcasonne",
+        "status": "Have"
+      },
+      {
+        "publisher": "Mayfair Games",
+        "title": "Settlers of Catan",
+        "status": "Have"
+      },
+      {
+        "publisher": "Rio Grande Games",
+        "title": "Galaxy Trucker",
+        "status": "Have"
+      },
+      {
+        "publisher": "999 Games",
+        "title": "Pandemic",
+        "status": "Have"
+      }
+    ]
   }
 })
