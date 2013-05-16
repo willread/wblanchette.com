@@ -1,13 +1,29 @@
 #!/bin/sh
+echo Pulling..
+git pull
+echo Running Jekyll to generate site..
 jekyll --no-auto
+echo Making backup of Jekyll site..
 rm -rf /tmp/_site
 mv _site /tmp
+echo Adding any new files to repo..
 git add -A
-git commit -a
+echo Commit message?
+read commit_message
+echo Committing..
+git commit -a -m "$commit_message"
+echo Pushing..
 git push
+echo Switching to gh-pages branch..
 git checkout gh-pages
+echo Restoring Jekyll site backup..
 cp -R /tmp/_site/* .
+echo Adding any new files to repo..
 git add -A
-git commit -a
+echo Committing..
+git commit -a -m "$commit_message"
+echo Pushing..
 git push
+echo Switching to master branch..
 git checkout master
+echo Done!
