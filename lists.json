@@ -2,7 +2,7 @@ callback({
 	"Video Games": {
 		"keys": {
 			"platform": ["PS2", "PS3", "Xbox", "Xbox 360", "PC", "Nintendo DS", "Nintendo 3DS", "Nintendo Wii"],
-			"name: "Name"
+			"name": "Name"
 		},
 		"items": [
 			{
