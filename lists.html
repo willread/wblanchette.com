@@ -6,8 +6,9 @@ layout: default
 	</div>
 	
 	<script>
+		var callback;
 		$(function(){
-			var edit = true;
+			var edit = false;
 			
 			// Connect to github
 			var github;
@@ -27,9 +28,7 @@ layout: default
 				var lists = this.lists; // For reference in child models / views
 				var listsModel = this; // For reference in child models / views
 				
-				// repo.read("gh-data", "lists.json", function(err, data){
-				// $.getJSON("https://raw.github.com/collectivecognition/wblanchette.com/gh-data/lists.json", {}, function(data, textStatus, jqXHR){
-				$.getJSON("{{site.url}}/lists.json", {}, function(data, textStatus, jqXHR){
+				callback = function(data, textStatus, jqXHR){
 				
 					// Iterate over lists
 					for(key in data){
@@ -132,7 +131,7 @@ layout: default
 						// Add list to parent model
 						lists.push(listModel);	
 					}
-				});
+				}
 				// Save all lists to JSON file
 				this.save = function(){
 					var json = {};
@@ -142,9 +141,18 @@ layout: default
 							items: ko.toJS(lists()[l].items())
 						}
 					}
-					json = JSON.stringify(json, undefined, 2);
-					repo.write("gh-pages", "lists.json", json, "Updated lists", function(err){});
+					json = "callback(" + JSON.stringify(json, undefined, 2) + ")";
+					repo.write("gh-data", "lists.json", json, "Updated lists", function(err){});
 				}
+				
+				// repo.read("gh-data", "lists.json", function(err, data){
+				// $.getJSON("https://raw.github.com/collectivecognition/wblanchette.com/gh-data/lists.json", {}, function(data, textStatus, jqXHR){
+				// $.getJSON("{{site.url}}/lists.json", {}, function(data, textStatus, jqXHR){
+				$.ajax({
+					url: "https://raw.github.com/collectivecognition/wblanchette.com/gh-data/lists.json",
+					dataType: "jsonp",
+					jsonp: "callback"
+				});
 			}
 			ko.applyBindings(new ListsModel());
 
