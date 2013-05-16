@@ -80,9 +80,13 @@ a img {
 
 .box h1, .box h2, .box h3, .box h4, .box h5 {
 	color: #203145;
-	margin: 20px 0px;
+	margin: 10px 0px;
 	font-family: "Helvetica Neue";
 	font-weight: normal;
+}
+
+.box a {
+	color: #1f3148;
 }
 
 #footer {
@@ -91,4 +95,94 @@ a img {
 	font-size: 12px;
 	text-align: center;
 	margin-top: 20px;
+}
+
+.list {
+	display: block;
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+
+.list label {
+	font-family: "Helvetica";
+	font-size: 18px;
+	color: #aaa;
+}
+
+.list :checked + label {
+	color: #333;
+}
+
+.list input[type=checkbox] {
+	position: absolute;
+	opacity: 0.001;
+}
+
+.list .wrapper {
+	display: block;
+	max-height: 0px;
+	opacity: 0.0;
+	overflow: hidden;
+	position: relative;
+	transition: 0.25s ease-in-out;
+}
+
+.list :checked ~ .wrapper {
+	max-height: 2499px;
+	opacity: 1.0;
+	transition: 0.25s ease-in-out;
+}
+
+.list h1 {
+	margin: 5px 0;
+}
+
+.list input[type=radio] {
+
+}
+
+.list table {
+	margin-bottom: 10px;
+}
+
+.list th {
+	font-family: "Droid Sans", sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: capitalize;
+	color: #aaa;
+}
+
+.list td {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+.list table input,
+.list table select {
+	width: 100%;
+	margin: 0;
+}
+
+.list table input {
+	margin: 0;
+	border: none;
+	line-height: 30px;
+	height: 30px;
+}
+
+.list table span {
+	display: block;
+	padding: 4px;
+}
+
+.list .tools {
+	margin-bottom: 10px;
+	float: right;
+}
+
+.list .tools button {
+	margin-left: 10px;
+	font-size: 12px;
 }

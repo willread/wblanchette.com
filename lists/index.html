@@ -6,20 +6,9 @@ layout: default
 	</div>
 	
 	<script>
-		var callback;
+		var callback; // FIXME: Dear god
 		$(function(){
-			var edit = false;
-			
-			// Connect to github
-			var github;
-			if(edit){
-				github = new Github({
-					username: "collectivecognition",
-					password: prompt("password"),
-					auth: "basic"
-				});
-				var repo = github.getRepo("collectivecognition", "wblanchette.com");
-			}
+			var edit = window.location.href.indexOf("#edit") > -1;
 			
 			// data = JSON.parse(data); // Parse JSON
 			// All encompassing model to hold all lists and manage saving / loading
@@ -28,10 +17,19 @@ layout: default
 				var lists = this.lists; // For reference in child models / views
 				var listsModel = this; // For reference in child models / views
 				
+				// Extender to make any urls into clickable links
+				ko.extenders.addAnchors = function(target){
+					return target().replace(/(http[s]?:\/\/)([\S]+)/gi, "<a href='$1$2'>$2</a>");
+				}
+				
 				callback = function(data, textStatus, jqXHR){
 				
+					var counter = 0;
+					
 					// Iterate over lists
 					for(key in data){
+						
+						counter++;
 						
 						// Make sure we're not dealing with a prototype property
 						if(data.hasOwnProperty(key)){
@@ -53,10 +51,10 @@ layout: default
 													else
 														this[key] = ko.observable(keys[key][0]);
 												else
-													this[key] = ko.observable(keys[key][0]);
+													this[key] = ko.observable(keys[key][0]).extend({addAnchors:{}});
 											break;
 											default:
-												this[key] = ko.observable(values[key] || keys[key]);
+												this[key] = ko.observable(values[key] || keys[key]).extend({addAnchors:{}});
 											break;
 										}
 									}
@@ -97,7 +95,7 @@ layout: default
 							})(key, keys, items, ItemModel);
 							
 							// Generate view
-							var view = "<div><table><thead><tr>";
+							var view = "<div class='list'><input type='checkbox' id='list-" + counter + "'><label for='list-" + counter + "'>" + key + "</label><div class='wrapper'><table class='table table-bordered'><thead><tr>";
 							for(k in keys){
 								view += "<th>" + k + "</th>";
 							}
@@ -105,18 +103,21 @@ layout: default
 							for(k in keys){
 								if(edit){
 									if(typeof keys[k] == "object") // TODO: Check properly for array (.length?)
-										view += "<td><select data-bind='options: $root." + k + ", value: " + k + "'></select></td>";
+										view += "<td><span><select data-bind='options: $root." + k + ", value: " + k + "'></select></span></td>";
 									else
-										view += "<td><input data-bind='value: " + k + "'/></td>";
+										view += "<td><span><input data-bind='value: " + k + "'/></span></td>";
 								}else{
-									view += "<td data-bind='text: " + k + "'></td>";
+									view += "<td data-bind='html: " + k + "'></td>";
 								}
 							}
 							view += "</tr></tbody></table>";
 							if(edit){
-								view += "<button data-bind='click: addItem'>Add Item</button>";
-								view += "<button data-bind='click: save'>Save</button>";
+								view += "<div class='tools'>";
+									view += "<button data-bind='click: addItem' class='btn'>Add Item</button>";
+									view += "<button data-bind='click: save' class='btn'>Save</button>";
+								view += "</div>";
 							}
+							view += "</div>";
 							view += "</div>";
 							
 							// Add markup to lists div
@@ -134,6 +135,16 @@ layout: default
 				}
 				// Save all lists to JSON file
 				this.save = function(){
+					// Connect to github
+					var github;
+					if(edit){
+						github = new Github({
+							username: "collectivecognition",
+							password: prompt("password"),
+							auth: "basic"
+						});
+						var repo = github.getRepo("collectivecognition", "wblanchette.com");
+					}
 					var json = {};
 					for(var l = 0; l < lists().length; l++){
 						json[lists()[l].name] = {
