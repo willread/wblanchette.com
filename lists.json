@@ -3,9 +3,10 @@ callback({
     "keys": {
       "name": "Tool Name",
       "url": "http://www.tool.com",
-      "os": [
+      "platform": [
         "Mac",
         "Windows",
+        "Cross-Platform",
         "Web"
       ]
     },
