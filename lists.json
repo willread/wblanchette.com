@@ -1,29 +1,45 @@
 callback({
-	"Video Games": {
-		"keys": {
-			"platform": ["PS2", "PS3", "Xbox", "Xbox 360", "PC", "Nintendo DS", "Nintendo 3DS", "Nintendo Wii"],
-			"name": "Name"
-		},
-		"items": [
-			{
-				"platform": "PS2",
-				"name": "Dragon Quest 8"
-			}
-		]
-	},
-	"Books": {
-		"keys": {
-			"author": "Author Name",
-			"title": "Title"
-		},
-		"items": []
-	},
-	"Board Games": {
-		"keys": {
-			"publisher": "Publisher Name",
-			"title": "Title"
-		},
-		"items": []
-	}
-
-});
+  "Video Games": {
+    "keys": {
+      "platform": [
+        "PS2",
+        "PS3",
+        "Xbox",
+        "Xbox 360",
+        "PC",
+        "Nintendo DS",
+        "Nintendo 3DS",
+        "Nintendo Wii"
+      ],
+      "name": "Name"
+    },
+    "items": [
+      {
+        "platform": "PS2",
+        "name": "Dragon Quest 8"
+      },
+      {
+        "platform": "PS3",
+        "name": "Dark Souls"
+      },
+      {
+        "platform": "Xbox 360",
+        "name": "Mass Effect 3"
+      }
+    ]
+  },
+  "Books": {
+    "keys": {
+      "author": "Author Name",
+      "title": "Title"
+    },
+    "items": []
+  },
+  "Board Games": {
+    "keys": {
+      "publisher": "Publisher Name",
+      "title": "Title"
+    },
+    "items": []
+  }
+})
