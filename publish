@@ -14,6 +14,9 @@ echo Committing..
 git commit -a -m "$commit_message"
 echo Pushing..
 git push
+echo Updating gh-data branch..
+git checkout gh-data
+git pull
 echo Switching to gh-pages branch..
 git checkout gh-pages
 echo Restoring Jekyll site backup..
