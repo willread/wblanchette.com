@@ -14,7 +14,12 @@ callback({
       {
         "name": "Coda",
         "url": "http://www.panic.com/coda",
-        "os": "Mac"
+        "platform": "Mac"
+      },
+      {
+        "name": "Balsamiq Mockups",
+        "url": "http://www.balsamiq.com",
+        "platform": "Cross-Platform"
       }
     ]
   },
