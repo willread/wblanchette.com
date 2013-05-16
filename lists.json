@@ -20,6 +20,11 @@ callback({
         "name": "Balsamiq Mockups",
         "url": "http://www.balsamiq.com",
         "platform": "Cross-Platform"
+      },
+      {
+        "name": "Adobe Creative Suite",
+        "url": "http://www.adobe.com/ca/products/creativecloud.html",
+        "platform": "Cross-Platform"
       }
     ]
   },
