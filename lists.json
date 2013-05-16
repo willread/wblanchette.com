@@ -1,48 +1,18 @@
 callback({
-  "Video Games": {
+  
+  "Tools": {
     "keys": {
-      "platform": [
-        "PS2",
-        "PS3",
-        "Xbox",
-        "Xbox 360",
-        "PC",
-        "Nintendo DS",
-        "Nintendo 3DS",
-        "Nintendo Wii"
-      ],
-      "name": "Name"
-    },
-    "items": [
-      {
-        "platform": "PS2",
-        "name": "Dragon Quest 8"
-      },
-      {
-        "platform": "Xbox",
-        "name": "Dark Souls"
-      },
-      {
-        "platform": "Xbox 360",
-        "name": "Mass Effect 3"
-      },
-      {
-        "platform": "PC",
-        "name": "Name"
-      }
-    ]
-  },
-  "Books": {
-    "keys": {
-      "author": "Author Name",
-      "title": "Title"
+      "name": "Tool Name",
+      "url": "http://www.tool.com",
+      "os": ["Mac", "Windows", "Web"]
     },
     "items": []
   },
   "Board Games": {
     "keys": {
       "publisher": "Publisher Name",
-      "title": "Title"
+      "title": "Title",
+      "status": ["Have", "Want"]
     },
     "items": []
   }
