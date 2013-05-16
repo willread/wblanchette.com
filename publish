@@ -20,6 +20,8 @@ echo Restoring Jekyll site backup..
 cp -R /tmp/_site/* .
 echo Adding any new files to repo..
 git add -A
+echo Pulling..
+git pull
 echo Committing..
 git commit -a -m "$commit_message"
 echo Pushing..
