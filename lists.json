@@ -10,5 +10,20 @@ callback({
 				"name": "Dragon Quest 8"
 			}
 		]
+	},
+	"Books": {
+		"keys": {
+			"author": "Author Name",
+			"title": "Title"
+		},
+		"items": []
+	},
+	"Board Games": {
+		"keys": {
+			"publisher": "Publisher Name",
+			"title": "Title"
+		},
+		"items": []
 	}
+
 });
