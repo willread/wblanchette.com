@@ -31,7 +31,7 @@ callback({
   "Work Books": {
     "keys": {
       "name": "",
-      "url": "http://"
+      "url": "http://",
       "rating": [1,2,3,4,5]
     },
     items: []
@@ -39,7 +39,7 @@ callback({
   "Fiction Books": {
     "keys": {
       "name": "",
-      "url": "http://"
+      "url": "http://",
       "rating": [1,2,3,4,5]
     },
     items: []
@@ -47,7 +47,7 @@ callback({
   "Non-fiction Books": {
     "keys": {
       "name": "",
-      "url": "http://"
+      "url": "http://",
       "rating": [1,2,3,4,5]
     },
     items: []
@@ -93,7 +93,7 @@ callback({
   "template": {
     "keys": {
       "name": "",
-      "url": "http://"
+      "url": "http://",
       "rating": [1,2,3,4,5]
     },
     items: []
