@@ -28,6 +28,30 @@ callback({
       }
     ]
   },
+  "Work Books": {
+    "keys": {
+      "name": "",
+      "url": "http://"
+      "rating": [1,2,3,4,5]
+    },
+    items: []
+  },
+  "Fiction Books": {
+    "keys": {
+      "name": "",
+      "url": "http://"
+      "rating": [1,2,3,4,5]
+    },
+    items: []
+  },
+  "Non-fiction Books": {
+    "keys": {
+      "name": "",
+      "url": "http://"
+      "rating": [1,2,3,4,5]
+    },
+    items: []
+  },
   "Board Games": {
     "keys": {
       "publisher": "Publisher Name",
