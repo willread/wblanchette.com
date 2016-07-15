@@ -1,0 +1,171 @@
+---
+layout: default
+---
+	<div class="box">
+		<div id="lists"></div>
+	</div>
+	
+	<script>
+		var callback; // FIXME: Dear god
+		$(function(){
+			var edit = window.location.href.indexOf("#edit") > -1;
+			
+			// data = JSON.parse(data); // Parse JSON
+			// All encompassing model to hold all lists and manage saving / loading
+			var ListsModel = function(){
+				this.lists = ko.observableArray();
+				var lists = this.lists; // For reference in child models / views
+				var listsModel = this; // For reference in child models / views
+				
+				// Extender to make any urls into clickable links
+				ko.extenders.addAnchors = function(target){
+					return target().replace(/(http[s]?:\/\/)([\S]+)/gi, "<a href='$1$2'>$2</a>");
+				}
+				
+				callback = function(data, textStatus, jqXHR){
+				
+					var counter = 0;
+					
+					// Iterate over lists
+					for(key in data){
+						
+						counter++;
+						
+						// Make sure we're not dealing with a prototype property
+						if(data.hasOwnProperty(key)){
+						
+							var keys = data[key].keys;
+							var items = data[key].items;
+							
+							// Generate item model
+							var ItemModel = (function(keys){
+								return function(values){
+									if(!values) values = {};
+									for(key in keys){
+										switch(typeof keys[key]){
+											case "object":
+												// TODO: Check properly for array (.length?)
+												if(values && values[key])
+													if($.inArray(values[key], keys[key]) > -1)
+														this[key] = ko.observable(values[key]);
+													else
+														this[key] = ko.observable(keys[key][0]);
+												else
+													this[key] = ko.observable(keys[key][0]).extend({addAnchors:{}});
+											break;
+											default:
+												this[key] = ko.observable(values[key] || keys[key]).extend({addAnchors:{}});
+											break;
+										}
+									}
+								}
+							})(keys);
+							
+							// Generate list model
+							var ListModel = (function(name, keys, items, ItemModel){
+								return function(){
+									var scope = this;
+									this.ItemModel = ItemModel;
+									this.name = name;
+									this.keys = keys;
+									for(key in keys){
+										switch(typeof keys[key]){
+											case "object":
+												// Save lists of possible values for this key
+												// TODO: Check properly for array (.length?)
+												scope[key] = keys[key];
+											break;
+											default:
+												// Noop
+											break;
+										}
+									}
+									scope.items = ko.observableArray();
+									for(var i = 0; i < items.length; i++){
+										var item = new this.ItemModel(items[i]);
+										scope.items.push(item);
+									}
+									this.addItem = function(){
+										scope.items.push(new this.ItemModel());
+									}
+									this.save = function(){
+										listsModel.save();
+									}
+								}
+							})(key, keys, items, ItemModel);
+							
+							// Generate view
+							var view = "<div class='list'><input type='checkbox' id='list-" + counter + "'><label for='list-" + counter + "'>" + key + "</label><div class='wrapper'><table class='table table-bordered'><thead><tr>";
+							for(k in keys){
+								view += "<th>" + k + "</th>";
+							}
+							view += "</tr></thead><tbody data-bind='foreach: items'><tr>";
+							for(k in keys){
+								if(edit){
+									if(typeof keys[k] == "object") // TODO: Check properly for array (.length?)
+										view += "<td><span><select data-bind='options: $root." + k + ", value: " + k + "'></select></span></td>";
+									else
+										view += "<td><span><input data-bind='value: " + k + "'/></span></td>";
+								}else{
+									view += "<td data-bind='html: " + k + "'></td>";
+								}
+							}
+							view += "</tr></tbody></table>";
+							if(edit){
+								view += "<div class='tools'>";
+									view += "<button data-bind='click: addItem' class='btn'>Add Item</button>";
+									view += "<button data-bind='click: save' class='btn'>Save</button>";
+								view += "</div>";
+							}
+							view += "</div>";
+							view += "</div>";
+							
+							// Add markup to lists div
+							view = $(view);
+							$("#lists").append(view);
+							
+							// Apply knockout bindings
+							var listModel = new ListModel(key);
+							ko.applyBindings(listModel, $(view)[0]);
+						}
+						
+						// Add list to parent model
+						lists.push(listModel);	
+					}
+				}
+				// Save all lists to JSON file
+				this.save = function(){
+					// Connect to github
+					var github;
+					if(edit){
+						github = new Github({
+							username: "collectivecognition",
+							password: prompt("password"),
+							auth: "basic"
+						});
+						var repo = github.getRepo("collectivecognition", "wblanchette.com");
+					}
+					var json = {};
+					for(var l = 0; l < lists().length; l++){
+						json[lists()[l].name] = {
+							keys: ko.toJS(lists()[l].keys),
+							items: ko.toJS(lists()[l].items())
+						}
+					}
+					json = "callback(" + JSON.stringify(json, undefined, 2) + ")";
+					repo.write("gh-data", "lists.json", json, "Updated lists", function(err){});
+				}
+				
+				// repo.read("gh-data", "lists.json", function(err, data){
+				// $.getJSON("https://raw.github.com/collectivecognition/wblanchette.com/gh-data/lists.json", {}, function(data, textStatus, jqXHR){
+				// $.getJSON("{{site.url}}/lists.json", {}, function(data, textStatus, jqXHR){
+				$.ajax({
+					url: "https://raw.github.com/collectivecognition/wblanchette.com/gh-data/lists.json",
+					dataType: "jsonp",
+					jsonp: "callback"
+				});
+			}
+			ko.applyBindings(new ListsModel());
+
+		});
+	</script>
