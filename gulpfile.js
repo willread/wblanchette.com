@@ -168,7 +168,7 @@ gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
-gulp.task('publish', ['build'], () => {
+gulp.task('publish', [], () => {
     return $.shell(['git subtree push --prefix dist origin gh-pages']);
 });
 
