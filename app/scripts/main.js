@@ -27,3 +27,13 @@ $.ajax({
     document.querySelector('[data-value="songs"]').innerText = response;
   }
 });
+
+// Fetch repos count
+
+$.ajax({
+  url: 'https://protected-bastion-41335.herokuapp.com/repos',
+  dataType: 'jsonp',
+  success: response => {
+    document.querySelector('[data-value="repos"]').innerText = response;
+  }
+});
