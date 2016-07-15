@@ -40,5 +40,8 @@
         "single"
       ]
     }
+  },
+  "dependencies": {
+    "gulp-shell": "^0.5.2"
   }
 }
