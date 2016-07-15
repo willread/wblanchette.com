@@ -169,13 +169,11 @@ gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
-gulp.task('publish', () => {
-    return $.shell([
-      'git subtree split --prefix dist -b gh-pages',
-      'git push -f origin gh-pages:gh-pages',
-      'git branch -D gh-pages'
-    ]);
-});
+gulp.task('publish', $.shell.task([
+  'git subtree split --prefix dist -b gh-pages',
+  'git push -f origin gh-pages:gh-pages',
+  'git branch -D gh-pages'
+]));
 
 gulp.task('default', ['clean'], () => {
   gulp.start('build');
