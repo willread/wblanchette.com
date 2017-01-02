@@ -1,1 +1,60 @@
-<svg width="129" height="142" viewBox="0 0 129 142" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Group</title><defs><path id="path-1" d="M75.043 15.188l49.532 28.597v57.195l-49.532 28.598-49.532-28.598V43.785z"/><filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2"><feOffset dx="7" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur stdDeviation="7.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.75 0" in="shadowBlurOuter1"/></filter><linearGradient x1="6.699%" y1="0%" x2="6.699%" y2="75%" id="linearGradient-3"><stop stop-color="#A8A8A8" offset="0%"/><stop stop-color="#393939" offset="100%"/></linearGradient><linearGradient x1="-105.696%" y1="75%" x2="6.699%" y2="75%" id="linearGradient-4"><stop stop-color="#FFF" offset="0%"/><stop stop-color="#393939" offset="100%"/></linearGradient></defs><g id="Page-1" fill="none" fill-rule="evenodd"><g id="Github-Badge" transform="translate(-13.623 -6.934)"><g id="Group"><g id="Hex" transform="rotate(60 75.043 72.383)"><use fill="#000" filter="url(#filter-2)" xlink:href="#path-1"/><use fill="#F0F0F0" xlink:href="#path-1"/></g><g id="Github-Logo" transform="translate(37.356 42.677)" fill="#404040"><path d="M1.037 31.336c3.365-.855 7.94-2.02 15.955-2.236-.222-.451-.422-.918-.599-1.399-3.119-.028-12.724.423-16.015 1.25a.248.248 0 0 1-.297-.183.252.252 0 0 1 .18-.302c3.26-.82 12.634-1.275 15.955-1.266-.747-2.236-1.078-4.798-1.078-7.658 0-5.08 1.555-6.995 3.644-9.703-1.598-5.789.573-9.746.573-9.746s3.356-.708 9.7 3.915c3.44-1.499 12.609-1.624 16.946-.333C48.664 1.885 53.534-.657 55.5.054c.531.872 1.677 3.412.694 8.995.669 1.224 4.135 3.832 4.149 11.204-.057 2.719-.334 5.014-.849 6.957 8.273-.072 13.139.623 16.49 1.251.132.028.22.157.198.293a.25.25 0 0 1-.24.205c-.017 0-.031-.002-.049-.003-3.346-.631-8.22-1.323-16.542-1.246-.145.493-.308.96-.485 1.407 2.831.096 10.61.404 16.953 2.379a.25.25 0 0 1 .163.314.245.245 0 0 1-.306.164c-6.432-2-14.379-2.275-17.022-2.364-2.3 5.142-7.018 7.061-14.644 7.86 2.471 1.583 3.18 3.568 3.18 8.942 0 5.373-.071 6.094-.054 7.33.026 2.028 2.946 2.999 2.838 3.652-.11.651-2.444.546-3.535.158-3.092-1.096-2.783-3.713-2.783-3.713l-.103-7.184s.211-3.868-1.192-3.868v11.76c0 2.556 1.758 3.333 1.758 4.278 0 1.624-3.212-.154-4.2-1.168-1.51-1.541-1.339-4.809-1.302-7.394.035-2.496-.022-7.955-.022-7.955l-1.025.022s.42 11.925-.54 14.099c-1.241 2.79-4.986 3.75-4.986 2.478 0-.855.923-.582 1.433-2.498.436-1.63.287-13.789.287-13.789s-1.2.723-1.2 3c0 1.042-.029 6.995-.029 8.768 0 2.228-3.11 3.497-4.604 3.497-.758 0-1.7-.037-1.7-.446 0-1.03 2.845-1.636 2.845-3.78 0-1.86-.04-6.642-.04-6.642s-1.434.25-3.48.25c-5.158 0-6.79-3.35-7.565-5.224-1.01-2.44-2.32-3.588-3.712-4.504-.854-.562-1.052-1.227-.063-1.416 4.566-.875 5.734 5.269 8.782 6.247 2.176.7 4.974.397 6.366-.519.184-1.877 1.513-3.5 2.62-4.354C24.229 36.74 19.63 34 17.248 29.594c-8.113.198-12.716 1.37-16.09 2.227l-.718.183a.248.248 0 0 1-.299-.183.252.252 0 0 1 .18-.304c.233-.058.472-.117.716-.181z" id="XMLID_1_"/></g><path d="M75.043 129.627l-.585.338-49.533-28.597V44.173l.236-.136 49.882 28.8v56.79z" id="Hex-Shade-Bottom-Left" fill="url(#linearGradient-3)" opacity=".229"/><path d="M125.16 100.364l-.585.338-49.532-28.597V14.91l.235-.136 49.883 28.8v56.79z" id="Hex-Shade-Top-Right" fill="url(#linearGradient-4)" opacity=".104"/></g></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 129 142" style="enable-background:new 0 0 129 142;" xml:space="preserve">
+<style type="text/css">
+	.st0{filter:url(#filter-2);}
+	.st1{fill:#F0F0F0;}
+	.st2{fill:#404040;}
+	.st3{opacity:0.2295;fill:url(#Hex-Shade-Bottom-Left_1_);enable-background:new    ;}
+	.st4{opacity:0.1036;fill:url(#Hex-Shade-Top-Right_1_);enable-background:new    ;}
+</style>
+<filter  filterUnits="objectBoundingBox" height="200%" id="filter-2" width="200%" x="-50%" y="-50%">
+	<feOffset  dx="7" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+	<feGaussianBlur  in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="7.5"></feGaussianBlur>
+	<feColorMatrix  in="shadowBlurOuter1" type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.75 0"></feColorMatrix>
+</filter>
+<title>Group</title>
+<desc>Created with Sketch.</desc>
+<g id="Page-1">
+	<g id="Github-Badge" transform="translate(-13.622909, -6.934082)">
+		<g id="Group">
+			<g id="Hex" transform="translate(75.043116, 72.382884) rotate(-300.000000) translate(-75.043116, -72.382884) ">
+				<g class="st0">
+					<polygon id="path-1_2_" points="76.6,12.5 126.1,41.1 126.1,98.3 76.6,126.9 27.1,98.3 27.1,41.1 					"/>
+				</g>
+				<g>
+					<polygon id="path-1_1_" class="st1" points="76.6,12.5 126.1,41.1 126.1,98.3 76.6,126.9 27.1,98.3 27.1,41.1 					"/>
+				</g>
+			</g>
+			<g id="Github-Logo" transform="translate(37.356500, 42.676963)">
+				<path id="XMLID_1_" class="st2" d="M4.1,31.3c3.4-0.9,7.9-2,16-2.2c-0.2-0.5-0.4-0.9-0.6-1.4c-3.1,0-12.7,0.4-16,1.3
+					c0,0,0,0-0.1,0c-0.1,0-0.2-0.1-0.2-0.2c0-0.1,0-0.3,0.2-0.3c3.3-0.8,12.6-1.3,16-1.3c-0.7-2.2-1.1-4.8-1.1-7.7
+					c0-5.1,1.6-7,3.6-9.7c-1.6-5.8,0.6-9.7,0.6-9.7s3.4-0.7,9.7,3.9c3.4-1.5,12.6-1.6,16.9-0.3c2.7-1.8,7.5-4.3,9.5-3.6
+					c0.5,0.9,1.7,3.4,0.7,9c0.7,1.2,4.1,3.8,4.1,11.2c-0.1,2.7-0.3,5-0.8,7c8.3-0.1,13.1,0.6,16.5,1.3c0.1,0,0.2,0.2,0.2,0.3
+					c0,0.1-0.1,0.2-0.2,0.2c0,0,0,0,0,0c-3.3-0.6-8.2-1.3-16.5-1.2c-0.1,0.5-0.3,1-0.5,1.4c2.8,0.1,10.6,0.4,17,2.4
+					c0.1,0,0.2,0.2,0.2,0.3c0,0.1-0.1,0.2-0.2,0.2c0,0,0,0-0.1,0c-6.4-2-14.4-2.3-17-2.4c-2.3,5.1-7,7.1-14.6,7.9
+					c2.5,1.6,3.2,3.6,3.2,8.9c0,5.4-0.1,6.1-0.1,7.3c0,2,2.9,3,2.8,3.7c-0.1,0.7-2.4,0.5-3.5,0.2c-3.1-1.1-2.8-3.7-2.8-3.7l-0.1-7.2
+					c0,0,0.2-3.9-1.2-3.9v11.8c0,2.6,1.8,3.3,1.8,4.3c0,1.6-3.2-0.2-4.2-1.2c-1.5-1.5-1.3-4.8-1.3-7.4c0-2.5,0-8,0-8l-1,0
+					c0,0,0.4,11.9-0.5,14.1c-1.2,2.8-5,3.7-5,2.5c0-0.9,0.9-0.6,1.4-2.5c0.4-1.6,0.3-13.8,0.3-13.8s-1.2,0.7-1.2,3c0,1,0,7,0,8.8
+					c0,2.2-3.1,3.5-4.6,3.5c-0.8,0-1.7,0-1.7-0.4c0-1,2.8-1.6,2.8-3.8c0-1.9,0-6.6,0-6.6s-1.4,0.2-3.5,0.2c-5.2,0-6.8-3.3-7.6-5.2
+					c-1-2.4-2.3-3.6-3.7-4.5c-0.9-0.6-1.1-1.2-0.1-1.4c4.6-0.9,5.7,5.3,8.8,6.2c2.2,0.7,5,0.4,6.4-0.5c0.2-1.9,1.5-3.5,2.6-4.4
+					c-7.8-0.8-12.4-3.5-14.7-7.9C12.2,29.8,7.6,31,4.2,31.8C4,31.9,3.8,32,3.5,32c0,0,0,0-0.1,0c-0.1,0-0.2-0.1-0.2-0.2
+					c0-0.1,0-0.3,0.2-0.3C3.6,31.5,3.9,31.4,4.1,31.3L4.1,31.3z"/>
+			</g>
+			
+				<linearGradient id="Hex-Shade-Bottom-Left_1_" gradientUnits="userSpaceOnUse" x1="-222.007" y1="471.1633" x2="-222.007" y2="470.4133" gradientTransform="matrix(50.1177 0 0 -85.9282 11179.541 40530.2852)">
+				<stop  offset="0" style="stop-color:#A8A8A8"/>
+				<stop  offset="1" style="stop-color:#393939"/>
+			</linearGradient>
+			<path id="Hex-Shade-Bottom-Left" class="st3" d="M78.1,129.6l-0.6,0.3L28,101.4V44.2l0.2-0.1l49.9,28.8V129.6z"/>
+			
+				<linearGradient id="Hex-Shade-Top-Right_1_" gradientUnits="userSpaceOnUse" x1="-223.5639" y1="470.6633" x2="-222.44" y2="470.6633" gradientTransform="matrix(50.1177 0 0 -85.9282 11229.6592 40501.0195)">
+				<stop  offset="0" style="stop-color:#FFFFFF"/>
+				<stop  offset="1" style="stop-color:#393939"/>
+			</linearGradient>
+			<path id="Hex-Shade-Top-Right" class="st4" d="M128.2,100.4l-0.6,0.3L78.1,72.1V14.9l0.2-0.1l49.9,28.8V100.4z"/>
+		</g>
+	</g>
+</g>
+</svg>
