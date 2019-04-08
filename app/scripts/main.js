@@ -1,7 +1,7 @@
 // Fetch beer count
 
 $.ajax({
-  url: 'https://protected-bastion-41335.herokuapp.com/beers',
+  url: 'https://snip.haqt.com/beers',
   dataType: 'jsonp',
   success: response => {
     document.querySelector('[data-value="beers"]').innerText = response;
@@ -11,7 +11,7 @@ $.ajax({
 // Fetch game count
 
 $.ajax({
-  url: 'https://protected-bastion-41335.herokuapp.com/games',
+  url: 'https://snip.haqt.com/games',
   dataType: 'jsonp',
   success: response => {
     document.querySelector('[data-value="games"]').innerText = response;
@@ -21,7 +21,7 @@ $.ajax({
 // Fetch song count
 
 $.ajax({
-  url: 'https://protected-bastion-41335.herokuapp.com/songs',
+  url: 'https://snip.haqt.com/songs',
   dataType: 'jsonp',
   success: response => {
     document.querySelector('[data-value="songs"]').innerText = response;
@@ -31,7 +31,7 @@ $.ajax({
 // Fetch repos count
 
 $.ajax({
-  url: 'https://protected-bastion-41335.herokuapp.com/repos',
+  url: 'https://snip.haqt.com/repos',
   dataType: 'jsonp',
   success: response => {
     document.querySelector('[data-value="repos"]').innerText = response;
