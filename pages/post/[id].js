@@ -1,45 +1,40 @@
-import { useRouter } from 'next/router';
+import  React from 'react';
 import Markdown from 'react-markdown';
+
 import Layout from '../../components/Layout';
+import posts from '../../util/posts';
 
-export default () => {
-  const router = useRouter();
-  return (
-    <Layout>
-      <h1>{router.query.id}</h1>
-      <div className="markdown">
-        <Markdown
-          source={`
-This is our blog post.
-Yes. We can have a [link](/link).
-And we can have a title as well.
+export default class extends React.Component {
+  static async getInitialProps({ res, query }) {
+    let content, post;
 
-### This is a title
+    try {
+      post = posts.find(p => p.id === query.id);
 
-And here's the content.
-      `}
-        />
-      </div>
-      <style jsx global>{`
-        .markdown {
-          font-family: 'Arial';
-        }
+      if (!post) {
+        throw(new Error());
+      } else {
+        content = (await require(`../../docs/posts/${post.path}`)).default;
+      }
+    } catch (e) {
+      content = 'Not found';
+    }
 
-        .markdown a {
-          text-decoration: none;
-          color: blue;
-        }
+    return { content, post };
+  }
 
-        .markdown a:hover {
-          opacity: 0.6;
-        }
-
-        .markdown h3 {
-          margin: 0;
-          padding: 0;
-          text-transform: uppercase;
-        }
-      `}</style>
-    </Layout>
-  );
+  render() {
+    return (
+      <Layout>
+        <div>
+          <h1>{ this.props.post.title }</h1>
+          <Markdown
+            source={this.props.content}
+          />
+        </div>
+        <style jsx global>{`
+        `}</style>
+      </Layout>
+    );
+  }ß
 };
