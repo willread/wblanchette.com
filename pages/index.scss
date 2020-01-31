@@ -1,0 +1,133 @@
+section.index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100vw;
+  min-height: 100vh;
+
+  .logo {
+    font-family: "Playfair Display", serif;
+    font-weight: 800;
+    font-size: 72px;
+    color: #252830;
+    letter-spacing: -0.38px;
+    text-align: right;
+    line-height: 68px;
+    text-transform: lowercase;
+    margin: 0 0 10px 0;
+    padding: 0;
+    text-shadow: 1px 1px 0 rgba(#fff, 0.6);
+  }
+
+  .title {
+    font-weight: 200;
+    font-size: 27px;
+    color: #252830;
+    letter-spacing: -0.14px;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    opacity: 0.6
+  }
+
+  .col {
+    &:first-child {
+      width: 160px;
+      margin-right: 70px;
+    }
+  }
+
+  .section-header {
+    opacity: 0.6;
+    font-weight: 900;
+    font-size: 18px;
+    color: #252830;
+    letter-spacing: -0.09px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+
+    &:after {
+      content: " —";
+    }
+  }
+
+  .stats {
+    width: 420px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    width: 140px;
+    text-decoration: none;
+
+    &:hover {
+      h1 {
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      opacity: 0.6;
+      font-weight: 900;
+      font-size: 48px;
+      color: #fff;
+      letter-spacing: -0.25px;
+      margin: 0;
+      line-height: 48px;
+      transition: opacity 0.15s;
+    }
+
+    h2 {
+      font-weight: normal;
+      font-size: 16px;
+      color: #fff;
+      letter-spacing: -0.08px;
+      margin: 0;
+    }
+  }
+
+  .articles {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      & + li {
+        margin-top: 5px;
+      }
+
+      a {
+        display: inline-block;
+        font-weight: 600;
+        font-size: 16px;
+        color: #fff;
+        letter-spacing: -0.08px;
+        text-decoration: none;
+
+        .date {
+          font-weight: 100;
+          opacity: 0.6;
+        }
+
+        &:hover {
+          animation: bump 0.15s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+@keyframes bump {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
