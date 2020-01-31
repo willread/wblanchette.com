@@ -17,6 +17,8 @@ section.index {
     margin: 0 0 10px 0;
     padding: 0;
     text-shadow: 1px 1px 0 rgba(#fff, 0.6);
+    pointer-events: none;
+    -webkit-user-select: none;
   }
 
   .title {
@@ -30,11 +32,19 @@ section.index {
     opacity: 0.6
   }
 
+  .cols {
+    display: flex;
+  }
+
   .col {
     &:first-child {
       width: 160px;
       margin-right: 70px;
     }
+  }
+
+  section + section {
+    margin-top: 20px;
   }
 
   .section-header {
@@ -43,7 +53,7 @@ section.index {
     font-size: 18px;
     color: #252830;
     letter-spacing: -0.09px;
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
     text-transform: uppercase;
 
     &:after {
@@ -52,7 +62,7 @@ section.index {
   }
 
   .stats {
-    width: 420px;
+    width: 280px;
     display: flex;
     flex-wrap: wrap;
   }
@@ -60,6 +70,7 @@ section.index {
   .stat {
     width: 140px;
     text-decoration: none;
+    margin-bottom: 10px;
 
     &:hover {
       h1 {
@@ -76,6 +87,7 @@ section.index {
       margin: 0;
       line-height: 48px;
       transition: opacity 0.15s;
+      min-height: 48px;
     }
 
     h2 {

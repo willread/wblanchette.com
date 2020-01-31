@@ -34,7 +34,7 @@ export default class extends React.Component<PostProps> {
     return (
       <Layout>
         <div>
-          <h1>{ this.props.post.title }</h1>
+          <h1>{ this.props.post.data.title }</h1>
           <Markdown
             source={this.props.content}
           />
