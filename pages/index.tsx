@@ -11,7 +11,7 @@ function fetcher(url) {
 
 const PostLink = ({ post }) => (
     <li>
-      <Link href="/post/[id]" as={`/post/${post.id}`}>
+      <Link href='/post/[id]' as={`/post/${post.id}`}>
         <a>
           {post.data.title}
           <span className='date'> / {post.data.date}</span>
@@ -25,6 +25,7 @@ export default function Blog() {
   const beers = useSWR(`/api/stats/beers`, fetcher).data;
   const songs = useSWR(`/api/stats/songs`, fetcher).data;
   const games = useSWR(`/api/stats/games`, fetcher).data;
+  const books = useSWR(`/api/stats/books`, fetcher).data;
 
   return (
     <Layout>
@@ -40,21 +41,25 @@ export default function Blog() {
               <h1 className='section-header'>About Me</h1>
 
               <div className='stats'>
-                <a href="https://github.com/willread" target="_blank" className='stat'>
+                <a href='https://github.com/willread' target='_blank' className='stat'>
                   <h1>{ repos ? repos.value : '' }</h1>
                   <h2>github repos</h2>
                 </a>
-                <a href="https://untappd.com/user/williamread" target="_blank" className='stat'>
+                <a href='https://untappd.com/user/williamread' target='_blank' className='stat'>
                   <h1>{ beers ? beers.value : '' }</h1>
                   <h2>untappd checkins</h2>
                 </a>
-                <a href="http://soundcloud.com/will_read" target="_blank" className='stat'>
+                <a href='http://soundcloud.com/will_read' target='_blank' className='stat'>
                   <h1>{ songs ? songs.value : '' }</h1>
                   <h2>soundcloud tracks</h2>
                 </a>
-                <a href="https://steamcommunity.com/id/mr-bill/" target="_blank" className='stat'>
+                <a href='https://steamcommunity.com/id/mr-bill/' target='_blank' className='stat'>
                   <h1>{ games ? games.value : '' }</h1>
                   <h2>steam games</h2>
+                </a>
+                <a href='https://www.goodreads.com/user/show/12302339-william' target='_blank' className='stat'>
+                  <h1>{ books ? books.value : '' }</h1>
+                  <h2>books read</h2>
                 </a>
               </div>
             </section>

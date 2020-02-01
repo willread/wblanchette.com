@@ -7,7 +7,8 @@ const stats = {
   repos: { lastFetch: null, value: 0 },
   beers: { lastFetch: null, value: 0 },
   songs: { lastFetch: null, value: 0 },
-  games: { lastFetch: null, value: 0 }
+  games: { lastFetch: null, value: 0 },
+  books: { lastFetch: null, value: 0 }
 };
 
 async function getStat(id, url, callback) {
@@ -64,9 +65,18 @@ export default async (req, res) => {
         value = await getStat('games', 'https://steamcommunity.com/id/mr-bill', dom => {
           return dom.window.document
             .querySelectorAll('.showcase_stat .value')[0]
-            .innerHTML.replace(/[^0-9]/g, '');
+            .innerHTML
+            .replace(/[^0-9]/g, '');
         });
-        console.log('games', value);
+      break;
+
+      case 'books':
+        value = await getStat('books', 'https://www.goodreads.com/user/show/12302339-william', dom => {
+          return dom.window.document
+            .querySelector('a[href="/review/list/12302339?shelf=read"]')
+            .innerHTML
+            .replace(/[^0-9]/g, '');
+        });
       break;
     }
 
