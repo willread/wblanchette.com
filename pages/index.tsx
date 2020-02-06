@@ -41,23 +41,28 @@ export default function Blog() {
               <h1 className='section-header'>About Me</h1>
 
               <div className='stats'>
-                <a href='https://github.com/willread' target='_blank' className='stat'>
+                <a href='https://github.com/willread' target='_blank' className={`stat ${repos ? '' : 'loading'}`}>
+                  <span className='loading-animation'></span>
                   <h1>{ repos ? repos.value : '' }</h1>
                   <h2>github repos</h2>
                 </a>
-                <a href='https://untappd.com/user/williamread' target='_blank' className='stat'>
+                <a href='https://untappd.com/user/williamread' target='_blank' className={`stat ${beers ? '' : 'loading'}`}>
+                  <span className='loading-animation'></span>
                   <h1>{ beers ? beers.value : '' }</h1>
                   <h2>untappd checkins</h2>
                 </a>
-                <a href='http://soundcloud.com/will_read' target='_blank' className='stat'>
+                <a href='http://soundcloud.com/will_read' target='_blank' className={`stat ${songs ? '' : 'loading'}`}>
+                  <span className='loading-animation'></span>
                   <h1>{ songs ? songs.value : '' }</h1>
                   <h2>soundcloud tracks</h2>
                 </a>
-                <a href='https://steamcommunity.com/id/mr-bill/' target='_blank' className='stat'>
+                <a href='https://steamcommunity.com/id/mr-bill/' target='_blank' className={`stat ${games ? '' : 'loading'}`}>
+                  <span className='loading-animation'></span>
                   <h1>{ games ? games.value : '' }</h1>
                   <h2>steam games</h2>
                 </a>
-                <a href='https://www.goodreads.com/user/show/12302339-william' target='_blank' className='stat'>
+                <a href='https://www.goodreads.com/user/show/12302339-william' target='_blank' className={`stat ${books ? '' : 'loading'}`}>
+                  <span className='loading-animation'></span>
                   <h1>{ books ? books.value : '' }</h1>
                   <h2>books read</h2>
                 </a>

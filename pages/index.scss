@@ -34,6 +34,7 @@ section.index {
 
   .cols {
     display: flex;
+    padding: 25px;
   }
 
   .col {
@@ -71,6 +72,49 @@ section.index {
     width: 140px;
     text-decoration: none;
     margin-bottom: 10px;
+    position: relative;
+
+    &.loading {
+      .loading-animation {
+        display: block;
+      }
+    }
+
+    .loading-animation {
+      position: relative;
+      display: none;
+      position: absolute;
+      left: 15px;
+      top: 30px;
+      margin-left: -11px;
+      margin-top: -3px;
+
+      &, &:before, &:after {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: rgba(#fff, 0.5);
+          animation: loading 1.3s linear infinite;
+      }
+
+      &:before {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          left: 8px;
+          top: 0;
+          animation-delay: -1.1s;
+      }
+
+      &:after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          left: 16px;
+          top: 0;
+          animation-delay: -0.9s;
+      }
+  }
 
     &:hover {
       h1 {
@@ -128,6 +172,26 @@ section.index {
       }
     }
   }
+
+  @media (max-width: 550px) {
+    .cols {
+      flex-direction: column;
+    }
+
+    .col:first-child {
+      width: auto;
+      margin-right: 0;
+      margin-bottom: 25px;
+    }
+
+    .logo {
+      text-align: left;
+    }
+
+    .title {
+      text-align: left;
+    }
+  }
 }
 
 @keyframes bump {
@@ -142,4 +206,14 @@ section.index {
   100% {
     transform: translateX(0);
   }
+}
+
+@keyframes loading {
+	0%, 60%, 100% {
+		transform: translateY(0);
+	}
+
+	30% {
+		transform: translateY(-5px);
+	}
 }
