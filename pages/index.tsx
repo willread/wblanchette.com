@@ -20,6 +20,16 @@ const PostLink = ({ post }) => (
     </li>
 );
 
+const ToolLink = ({ id, title }) => (
+  <li>
+    <Link href='/tools/[id[' as={`/tools/${id}`}>
+      <a>
+        {title}
+      </a>
+    </Link>
+  </li>
+);
+
 export default function Blog() {
   const repos = useSWR(`/api/stats/repos`, fetcher).data;
   const beers = useSWR(`/api/stats/beers`, fetcher).data;
@@ -28,7 +38,7 @@ export default function Blog() {
   const books = useSWR(`/api/stats/books`, fetcher).data;
 
   return (
-    <Layout>
+    <Layout noHeader>
       <section className='index'>
         <div className='cols'>
           <div className='col'>
@@ -70,7 +80,7 @@ export default function Blog() {
             </section>
 
             {/* <section>
-              <h1 className='section-header'>Latest Articles</h1>
+              <h1 className='section-header'>Articles</h1>
 
               <ul className='articles'>
                 {posts.map(post => (
@@ -78,6 +88,14 @@ export default function Blog() {
                 ))}
               </ul>
             </section> */}
+
+            <section>
+              <h1 className='section-header'>Tools</h1>
+
+              <ul className='articles'>
+                <ToolLink id='dotted-underlines' title='Dotted Underline CSS Generator'></ToolLink>
+              </ul>
+            </section>
 
             <section>
               <h1 className='section-header'>Contact Me</h1>

@@ -24,7 +24,15 @@ const Layout = props => (
       <meta name="msapplication-TileImage" content="/static/ms-icon-144x144.png" />
       <meta name="theme-color" content="#252830"></meta>
     </Head>
-    {props.children}
+    { !props.noHeader
+      ? <header className="site-header">
+        <a href="/" className="logo">will read</a>
+      </header>
+      : '' }
+
+    <div className="site-content">
+      {props.children}
+    </div>
   </div>
 );
 

@@ -8,7 +8,7 @@ import { Post } from '../../src/types';
 
 type PostProps = {
   post: Post,
-  content: string
+  content: any
 };
 
 export default class extends React.Component<PostProps> {
@@ -27,7 +27,7 @@ export default class extends React.Component<PostProps> {
       content = 'Not found';
     }
 
-    return { content: matter(content), post };
+    return { content: matter(content).content, post };
   }
 
   render() {

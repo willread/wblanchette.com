@@ -1,0 +1,45 @@
+.code-block {
+  position: relative;
+  max-width: 100%;
+
+  &:hover {
+    .copy {
+      opacity: 1;
+    }
+  }
+}
+
+code {
+  display: block;
+  white-space: pre;
+  max-width: 100%;
+  overflow: auto;
+  font-size: 12px;
+}
+
+.copy {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+
+  &:active {
+    animation: bumpy 0.1s;
+  }
+}
+
+@keyframes bumpy {
+  0% {
+    transform: scale(1);
+  }
+
+  70% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

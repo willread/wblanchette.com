@@ -1,6 +1,6 @@
 ---
 title: Example Post
-date: December 20, 2019
+date: April 18, 2020
 writtenBy: Will Read
 ---
-Content goes here.
+
