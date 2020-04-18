@@ -152,23 +152,25 @@ section.index {
       & + li {
         margin-top: 5px;
       }
+    }
+  }
 
-      a {
-        display: inline-block;
-        font-weight: 600;
-        font-size: 16px;
-        color: #fff;
-        letter-spacing: -0.08px;
-        text-decoration: none;
+  .articles, .contact {
+    a {
+      display: inline-block;
+      font-weight: 600;
+      font-size: 16px;
+      color: #fff;
+      letter-spacing: -0.08px;
+      text-decoration: none;
 
-        .date {
-          font-weight: 100;
-          opacity: 0.6;
-        }
+      .meta {
+        font-weight: 100;
+        opacity: 0.6;
+      }
 
-        &:hover {
-          animation: bump 0.15s ease-in-out;
-        }
+      &:hover {
+        animation: bump 0.15s ease-in-out;
       }
     }
   }

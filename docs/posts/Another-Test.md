@@ -1,6 +1,6 @@
 ---
-title: Another Test Title With A Really Long Title
-date: December 20, 1987
+title: Example Post
+date: December 20, 2019
 writtenBy: Will Read
 ---
-Foo
+Content goes here.

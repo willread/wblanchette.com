@@ -14,7 +14,7 @@ const PostLink = ({ post }) => (
       <Link href='/post/[id]' as={`/post/${post.id}`}>
         <a>
           {post.data.title}
-          <span className='date'> / {post.data.date}</span>
+          <span className='meta'> / {post.data.date}</span>
         </a>
       </Link>
     </li>
@@ -69,7 +69,7 @@ export default function Blog() {
               </div>
             </section>
 
-            <section>
+            {/* <section>
               <h1 className='section-header'>Latest Articles</h1>
 
               <ul className='articles'>
@@ -77,6 +77,14 @@ export default function Blog() {
                   <PostLink key={post.id} post={post} />
                 ))}
               </ul>
+            </section> */}
+
+            <section>
+              <h1 className='section-header'>Contact Me</h1>
+
+              <div className="contact">
+                <a href="mailto:hello@willread.ca">Drop me a line at <span className="meta">hello@willread.ca</span></a>
+              </div>
             </section>
           </div>
         </div>
