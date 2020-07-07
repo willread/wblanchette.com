@@ -4,7 +4,7 @@ import jsdom from 'jsdom';
 const JSDOM = jsdom.JSDOM;
 const fetchDelay = 1000 * 60 * 60; // Once an hour
 const stats = {
-  repos: { lastFetch: null, value: 0 },
+  commits: { lastFetch: null, value: 0 },
   beers: { lastFetch: null, value: 0 },
   songs: { lastFetch: null, value: 0 },
   games: { lastFetch: null, value: 0 },
@@ -39,9 +39,10 @@ export default async (req, res) => {
 
     switch(id) {
       case 'commits':
-        value = await getStat('repos', 'https://github.com/willread?tab=repositories', dom => {
+        value = await getStat('commits', 'https://github.com/willread', dom => {
+          console.log('dom', dom);
           return dom.window.document
-            .querySelector(".js-yearly-contributions h2")
+            .querySelector('.js-yearly-contributions h2')
             .innerHTML.replace(/[^0-9]/g, '');
         });
       break
