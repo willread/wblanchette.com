@@ -1,34 +1,38 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,900|Source+Sans+Pro:200,300,400,600,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 body {
   margin: 0;
   min-height: 100vh;
-  background: #9EB7B8;
-  font-family: "Source Sans Pro", sans-serif;
+  background: #fff;
+  font-family: "PT Serif", Georgia, Times, "Times New Roman", serif;
+}
+
+@mixin sans {
+  font-family: Poppins, "Century Gothic", CenturyGothic, Arial, sans-serif
 }
 
 .site-header {
   display: block;
-  background: #252830;
-  padding: 10px 20px;
+  text-align: center;
+  padding: 20px 0;
 
   .logo {
-    font-family: "Playfair Display", serif;
-    font-weight: 400;
-    font-size: 18px;
-    color: #fff;
+    font-size: 40px;
+    letter-spacing: 0.29px;
+    text-transform: lowercase;
     cursor: pointer;
     text-decoration: none;
   }
 }
 
 .site-content {
-  padding: 20px;
+  padding: 0 20px 20px 20px;
   overflow: hidden;
 }
 
 * {
   box-sizing: border-box;
-  color: #24292e
+  color: rgba(#000, 0.7);
 }
 

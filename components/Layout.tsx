@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 import './Layout.scss';
+import Logo from './Logo';
 
 const Layout = props => (
   <div>
@@ -26,7 +27,9 @@ const Layout = props => (
     </Head>
     { !props.noHeader
       ? <header className="site-header">
-        <a href="/" className="logo">will read</a>
+        <a href="/" className="logo">
+          <Logo />
+        </a>
       </header>
       : '' }
 
