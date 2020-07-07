@@ -31,7 +31,7 @@ const ToolLink = ({ id, title }) => (
 );
 
 export default function Blog() {
-  const repos = useSWR(`/api/stats/repos`, fetcher).data;
+  const commits = useSWR(`/api/stats/commits`, fetcher).data;
   const beers = useSWR(`/api/stats/beers`, fetcher).data;
   const songs = useSWR(`/api/stats/songs`, fetcher).data;
   const games = useSWR(`/api/stats/games`, fetcher).data;
@@ -51,10 +51,10 @@ export default function Blog() {
               <h1 className='section-header'>About Me</h1>
 
               <div className='stats'>
-                <a href='https://github.com/willread' target='_blank' className={`stat ${repos ? '' : 'loading'}`}>
+                <a href='https://github.com/willread' target='_blank' className={`stat ${commits ? '' : 'loading'}`}>
                   <span className='loading-animation'></span>
-                  <h1>{ repos ? repos.value : '' }</h1>
-                  <h2>github repos</h2>
+                  <h1>{ commits ? commits.value : '' }</h1>
+                  <h2>git commits</h2>
                 </a>
                 <a href='https://untappd.com/user/williamread' target='_blank' className={`stat ${beers ? '' : 'loading'}`}>
                   <span className='loading-animation'></span>

@@ -38,10 +38,10 @@ export default async (req, res) => {
     stats[id].lastFetch = now;
 
     switch(id) {
-      case 'repos':
+      case 'commits':
         value = await getStat('repos', 'https://github.com/willread?tab=repositories', dom => {
           return dom.window.document
-            .querySelector("a[href='/willread?tab=repositories'] .Counter")
+            .querySelector(".js-yearly-contributions h2")
             .innerHTML.replace(/[^0-9]/g, '');
         });
       break
