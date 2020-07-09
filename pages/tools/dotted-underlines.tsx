@@ -20,7 +20,7 @@ export default function DottedUnderlines() {
 
   return (
     <Layout>
-      <section class="tool">
+      <section className="tool">
         <div className="description block">
           A useful technique for creating dashed / dotted underlines using css gradients for when you need precise control over the size / spacing of the dashes.
         </div>

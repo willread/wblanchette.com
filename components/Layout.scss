@@ -29,6 +29,7 @@ body {
 .site-content {
   padding: 0 20px 20px 20px;
   overflow: hidden;
+  animation: fade-in 0.5s linear forwards;
 }
 
 * {
@@ -36,3 +37,12 @@ body {
   color: rgba(#000, 0.7);
 }
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

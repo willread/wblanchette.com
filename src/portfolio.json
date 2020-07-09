@@ -1,0 +1,79 @@
+{
+  "sites": [
+    {
+      "title": "Beader",
+      "description": "Beader is a beading pattern and pixel art design tool with a small but dedicated community which I've used as a platform for experimenting with new Javascript frameworks over the years.",
+      "stack": ["react"],
+      "pages": [
+        {
+          "title": "Homepage",
+          "screenshots": [
+            {
+              "device": "desktop",
+              "resolution": {
+                "width": 1440,
+                "height": 1080
+              },
+              "path": "beader-homepage-1440x1080@2x.png"
+            },
+            {
+              "device": "mobile",
+              "resolution": {
+                "width": 374,
+                "height": 812
+              },
+              "path": "beader-homepage-374x812@2x.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Cometeer",
+      "pages": [
+        {
+          "title": "Homepage",
+          "screenshots": [
+            {
+              "device": "desktop",
+              "resolution": {
+                "width": 1440,
+                "height": 1080
+              },
+              "path": "cometeer-homepage-1440x1080@2x.png"
+            },
+            {
+              "device": "mobile",
+              "resolution": {
+                "width": 374,
+                "height": 812
+              },
+              "path": "cometeer-homepage-374x812@2x.png"
+            }
+          ]
+        },
+        {
+          "title": "Pilot Program",
+          "screenshots": [
+            {
+              "device": "desktop",
+              "resolution": {
+                "width": 1440,
+                "height": 1080
+              },
+              "path": "cometeer-pilot program-1440x1080@2x.png"
+            },
+            {
+              "device": "mobile",
+              "resolution": {
+                "width": 374,
+                "height": 812
+              },
+              "path": "cometeer-pilot program-374x812@2x.png"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

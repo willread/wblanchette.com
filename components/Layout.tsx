@@ -1,8 +1,6 @@
 import Head from 'next/head';
 
 import './Layout.scss';
-import Logo from './Logo';
-
 const Layout = props => (
   <div>
     <Head>
@@ -28,7 +26,7 @@ const Layout = props => (
     { !props.noHeader
       ? <header className="site-header">
         <a href="/" className="logo">
-          <Logo />
+          <img src='/static/images/logo.svg'/>
         </a>
       </header>
       : '' }

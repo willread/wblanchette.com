@@ -40,7 +40,6 @@ export default async (req, res) => {
     switch(id) {
       case 'commits':
         value = await getStat('commits', 'https://github.com/willread', dom => {
-          console.log('dom', dom);
           return dom.window.document
             .querySelector('.js-yearly-contributions h2')
             .innerHTML.replace(/[^0-9]/g, '');

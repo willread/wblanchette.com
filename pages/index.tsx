@@ -3,7 +3,6 @@ import useSWR from 'swr';
 
 import Layout from '../components/Layout';
 import posts from '../src/posts';
-import Logo from '../components/Logo';
 import './index.scss';
 
 function fetcher(url) {
@@ -43,7 +42,7 @@ export default function Blog() {
       <section className='index'>
         <div className='wrapper'>
           <h1 className='logo'>
-            <Logo />
+            <img src='/static/images/logo.svg'/>
           </h1>
           <h2 className='title'>web developer</h2>
 
