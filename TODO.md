@@ -1,4 +1,5 @@
 - Portfolio
+- Page titles
 - Sticky header
 - Copyright / contact footer
 - Code syntax styles

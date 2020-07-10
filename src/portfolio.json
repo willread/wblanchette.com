@@ -30,6 +30,8 @@
     },
     {
       "title": "Cometeer",
+      "description": "",
+      "stack": ["shopify", "solidus", "ruby", "rails", "scss", "scrollmagic"],
       "pages": [
         {
           "title": "Homepage",

@@ -43,8 +43,19 @@ export default class extends React.Component<PortfolioProps>{
     this.setState({ activePages });
   }
 
-  toggleFullscreen(siteIndex: number) {
+  toggleFullscreen(siteIndex: number, e?: MouseEvent) {
+    if (e && siteIndex === this.state.fullscreenSite) {
+      e.preventDefault();
+      return false;
+    }
+
     this.setState({ fullscreenSite: siteIndex });
+
+    if (typeof siteIndex === 'number') {
+      document.body.style.overflow = 'hidden';
+    }else {
+      document.body.style.overflow = '';
+    }
   }
 
   changeDevice(siteIndex: number, device: DeviceType) {
@@ -67,13 +78,18 @@ export default class extends React.Component<PortfolioProps>{
               >
                 <h1>{site.title}</h1>
                 <p>{site.description}</p>
-
+                {site.stack &&
+                  <div className="stack">
+                    {site.stack.map(tech => (<li key={tech}>{tech}</li>))}
+                  </div>
+                }
                 {site.pages.map((page, pageIndex) => (
                   <div
                     key={pageIndex}
                     className={`page ${this.state.activePages[siteIndex] === pageIndex ? 'active' : ''}`}
-                    onClick={() => this.toggleFullscreen(siteIndex)}
+                    onClick={e => this.toggleFullscreen(siteIndex, e)}
                   >
+                    <div className='overlay' onClick={() => this.toggleFullscreen(null)}></div>
                     {page.screenshots.map((screenshot, screenshotIndex) => (
                       <div
                         key={screenshotIndex}
@@ -91,7 +107,11 @@ export default class extends React.Component<PortfolioProps>{
                 {site.pages.length > 1 &&
                   <nav>
                     {site.pages.map((page, index) => (
-                      <button key={index} onClick={() => this.changePage(siteIndex, index)}>{page.title}</button>
+                      <button
+                        key={index}
+                        onClick={() => this.changePage(siteIndex, index)}
+                        className={this.state.activePages[siteIndex] === index ? 'active' : ''}
+                      ></button>
                     ))}
                   </nav>
                 }
