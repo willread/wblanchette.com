@@ -13,7 +13,7 @@ export default function DottedUnderlines() {
 
   const code =
 `.underline {
-  background: linear-gradient(90deg, ${color} 0, ${color} ${dashWidth}px, transparent ${dashWidth}px, transparent 100%) bottom left / ${dashWidth + spaceWidth}px ${thickness + padding}px repeat-x;
+  background: linear-gradient(90deg, ${color} 0, ${color} ${dashWidth}px, transparent ${dashWidth}px, transparent 100%) bottom left / ${dashWidth + spaceWidth}px ${thickness}px repeat-x;
   display: inline-block;
   padding-bottom: ${padding}px;
 }`;
@@ -53,7 +53,7 @@ export default function DottedUnderlines() {
         <h2>Preview</h2>
 
         <div className={styles.preview}>
-          <a className={styles.underline}>This is some text with an underline</a>
+          <a className="underline">This is some text with an underline</a>
         </div>
 
         <h2>CSS</h2>
