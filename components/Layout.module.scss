@@ -1,0 +1,29 @@
+.siteHeader {
+  display: block;
+  text-align: center;
+  padding: 20px 0;
+
+  .logo {
+    font-size: 40px;
+    letter-spacing: 0.29px;
+    text-transform: lowercase;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+.siteContent {
+  padding: 0 20px 20px 20px;
+  overflow: hidden;
+  animation: fadeIn 0.5s linear forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

@@ -3,7 +3,7 @@ import useSWR from 'swr';
 
 import Layout from '../components/Layout';
 import posts from '../src/posts';
-import './index.scss';
+import styles from './index.module.scss';
 
 function fetcher(url) {
   return fetch(url).then(r => r.json());
@@ -39,39 +39,39 @@ export default function Blog() {
 
   return (
     <Layout noHeader>
-      <section className='index'>
-        <div className='wrapper'>
-          <h1 className='logo'>
+      <section className={styles.index}>
+        <div className={styles.wrapper}>
+          <h1 className={styles.logo}>
             <img src='/static/images/logo.svg'/>
           </h1>
-          <h2 className='title'>web developer</h2>
+          <h2 className={styles.title}>web developer</h2>
 
           <section>
-            <h1 className='section-header'>About Me</h1>
+            <h1 className={styles.sectionHeader}>About Me</h1>
 
-            <div className='stats'>
-              <a href='https://github.com/willread' target='_blank' className={`stat ${commits ? '' : 'loading'}`}>
-                <span className='loading-animation'></span>
+            <div className={styles.stats}>
+              <a href='https://github.com/willread' target='_blank' className={`${styles.stat} ${commits ? '' : styles.loading}`}>
+                <span className={styles.loadingAnimation}></span>
                 <h1>{ commits ? commits.value : '' }</h1>
                 <h2>git commits</h2>
               </a>
-              <a href='https://untappd.com/user/williamread' target='_blank' className={`stat ${beers ? '' : 'loading'}`}>
-                <span className='loading-animation'></span>
+              <a href='https://untappd.com/user/williamread' target='_blank' className={`${styles.stat} ${beers ? '' : styles.loading}`}>
+                <span className={styles.loadingAnimation}></span>
                 <h1>{ beers ? beers.value : '' }</h1>
                 <h2>untappd checkins</h2>
               </a>
-              <a href='http://soundcloud.com/will_read' target='_blank' className={`stat ${songs ? '' : 'loading'}`}>
-                <span className='loading-animation'></span>
+              <a href='http://soundcloud.com/will_read' target='_blank' className={`${styles.stat} ${songs ? '' : styles.loading}`}>
+                <span className={styles.loadingAnimation}></span>
                 <h1>{ songs ? songs.value : '' }</h1>
                 <h2>soundcloud tracks</h2>
               </a>
-              <a href='https://steamcommunity.com/id/mr-bill/' target='_blank' className={`stat ${games ? '' : 'loading'}`}>
-                <span className='loading-animation'></span>
+              <a href='https://steamcommunity.com/id/mr-bill/' target='_blank' className={`${styles.stat} ${games ? '' : styles.loading}`}>
+                <span className={styles.loadingAnimation}></span>
                 <h1>{ games ? games.value : '' }</h1>
                 <h2>steam games</h2>
               </a>
-              <a href='https://www.goodreads.com/user/show/12302339-william' target='_blank' className={`stat ${books ? '' : 'loading'}`}>
-                <span className='loading-animation'></span>
+              <a href='https://www.goodreads.com/user/show/12302339-william' target='_blank' className={`${styles.stat} ${books ? '' : styles.loading}`}>
+                <span className={styles.loadingAnimation}></span>
                 <h1>{ books ? books.value : '' }</h1>
                 <h2>books read</h2>
               </a>
@@ -79,9 +79,9 @@ export default function Blog() {
           </section>
 
           {/* <section>
-            <h1 className='section-header'>Articles</h1>
+            <h1 className={styles.sectionHeader}>Articles</h1>
 
-            <ul className='articles'>
+            <ul className={styles.articles}>
               {posts.map(post => (
                 <PostLink key={post.id} post={post} />
               ))}
@@ -89,18 +89,18 @@ export default function Blog() {
           </section> */}
 
           <section>
-            <h1 className='section-header'>Tools</h1>
+            <h1 className={styles.sectionHeader}>Tools</h1>
 
-            <ul className='articles'>
+            <ul className={styles.articles}>
               <ToolLink id='dotted-underlines' title='Dotted Underline CSS Generator'></ToolLink>
             </ul>
           </section>
 
           <section>
-            <h1 className='section-header'>Contact Me</h1>
+            <h1 className={styles.sectionHeader}>Contact Me</h1>
 
-            <div className="contact">
-              <a href="mailto:hello@willread.ca">Drop me a line at <span className="meta">hello@willread.ca</span></a>
+            <div className={styles.contact}>
+              <a href='mailto:hello@willread.ca'>Drop me a line at <span className={styles.meta}>hello@willread.ca</span></a>
             </div>
           </section>
         </div>

@@ -1,6 +1,6 @@
-@import '../components/Layout';
+@import '../styles/util';
 
-section.index {
+.index {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,7 +39,7 @@ section.index {
     text-align: left;
   }
 
-  .section-header {
+  .sectionHeader {
     @include sans;
 
     font-weight: 900;
@@ -68,12 +68,12 @@ section.index {
     position: relative;
 
     &.loading {
-      .loading-animation {
+      .loadingAnimation {
         display: block;
       }
     }
 
-    .loading-animation {
+    .loadingAnimation {
       position: relative;
       display: none;
       position: absolute;
@@ -222,7 +222,7 @@ section.index {
 }
 
 @media (max-width: 480px) {
-  section.index {
+  .index {
     align-items: flex-start;
   }
 }

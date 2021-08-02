@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
-import './Layout.scss';
+import styles from './Layout.module.scss';
+
 const Layout = props => (
   <div>
     <Head>
@@ -24,14 +25,14 @@ const Layout = props => (
       <meta name="theme-color" content="#252830"></meta>
     </Head>
     { !props.noHeader
-      ? <header className="site-header">
+      ? <header className={styles.siteHeader}>
         <a href="/" className="logo">
           <img src='/static/images/logo.svg'/>
         </a>
       </header>
       : '' }
 
-    <div className="site-content">
+    <div className={styles.siteContent}>
       {props.children}
     </div>
   </div>
