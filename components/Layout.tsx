@@ -5,7 +5,7 @@ import styles from './Layout.module.scss';
 const Layout = props => (
   <div>
     <Head>
-      <title>willread.ca</title>
+      <title>Will Read</title>
       <link rel="apple-touch-icon" sizes="57x57" href="/static/apple-icon-57x57.png" />
       <link rel="apple-touch-icon" sizes="60x60" href="/static/apple-icon-60x60.png" />
       <link rel="apple-touch-icon" sizes="72x72" href="/static/apple-icon-72x72.png" />
