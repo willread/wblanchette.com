@@ -1,0 +1,18 @@
+.wrapper {
+  pre {
+    code {
+      display: inline-block;
+      white-space: pre;
+      max-width: 100%;
+      overflow: auto;
+      padding: 10px;
+    }
+  }
+
+  code {
+    font-size: 12px;
+    padding: 4px 7px;
+    background: #efefef;
+    border-radius: 5px;
+  }
+}

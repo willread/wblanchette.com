@@ -5,6 +5,7 @@ import Markdown from 'react-markdown';
 import Layout from '../../components/Layout';
 import posts from '../../src/posts';
 import { Post } from '../../src/types';
+import styles from './post.module.scss';
 
 type PostProps = {
   post: Post,
@@ -33,7 +34,7 @@ export default class extends React.Component<PostProps> {
   render() {
     return (
       <Layout>
-        <div>
+        <div className={styles.wrapper}>
           <h1>{ this.props.post.data.title }</h1>
           <Markdown
             source={this.props.content}
