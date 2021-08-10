@@ -1,4 +1,5 @@
 import matter from 'gray-matter';
+import Head from 'next/head';
 import  React from 'react';
 import Markdown from 'react-markdown';
 
@@ -34,8 +35,11 @@ export default class extends React.Component<PostProps> {
   render() {
     return (
       <Layout>
+        <Head>
+          <title>{this.props.post.data.title}</title>
+        </Head>
         <div className={styles.wrapper}>
-          <h1>{ this.props.post.data.title }</h1>
+          <h1>{this.props.post.data.title}</h1>
           <Markdown
             source={this.props.content}
           />

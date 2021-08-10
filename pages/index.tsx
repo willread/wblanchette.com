@@ -44,10 +44,23 @@ export default function Blog() {
           <h1 className={styles.logo}>
             <img src='/static/images/logo.svg'/>
           </h1>
-          <h2 className={styles.title}>web developer</h2>
 
           <section>
             <h1 className={styles.sectionHeader}>About Me</h1>
+
+            <div className={styles.text}>
+              <p>I'm a web developer from Calgary, AB, Canada with almost 20 years of experience working with more technologies than you can shake a stick at.</p>
+            </div>
+
+            <h1 className={styles.sectionHeader}>Articles</h1>
+
+            <ul className={styles.articles}>
+              {posts.map(post => (
+                <PostLink key={post.id} post={post} />
+              ))}
+            </ul>
+
+            <h1 className={styles.sectionHeader}>Stats</h1>
 
             <div className={styles.stats}>
               <a href='https://github.com/willread' target='_blank' className={`${styles.stat} ${commits ? '' : styles.loading}`}>
@@ -76,16 +89,6 @@ export default function Blog() {
                 <h2>books read</h2>
               </a>
             </div>
-          </section>
-
-          <section>
-            <h1 className={styles.sectionHeader}>Articles</h1>
-
-            <ul className={styles.articles}>
-              {posts.map(post => (
-                <PostLink key={post.id} post={post} />
-              ))}
-            </ul>
           </section>
 
           <section>

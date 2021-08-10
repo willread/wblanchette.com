@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useState } from 'react';
 
 import styles from './tools.module.scss';
@@ -20,6 +21,9 @@ export default function DottedUnderlines() {
 
   return (
     <Layout>
+      <Head>
+        <title>Dotted Underline CSS Generator</title>
+      </Head>
       <section className={styles.tool}>
         <div className={`${styles.description} ${styles.block}`}>
           A useful technique for creating dashed / dotted underlines using css gradients for when you need precise control over the size / spacing of the dashes.
