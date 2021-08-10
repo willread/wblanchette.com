@@ -78,7 +78,7 @@ export default function Blog() {
             </div>
           </section>
 
-          {/* <section>
+          <section>
             <h1 className={styles.sectionHeader}>Articles</h1>
 
             <ul className={styles.articles}>
@@ -86,7 +86,7 @@ export default function Blog() {
                 <PostLink key={post.id} post={post} />
               ))}
             </ul>
-          </section> */}
+          </section>
 
           <section>
             <h1 className={styles.sectionHeader}>Tools</h1>
