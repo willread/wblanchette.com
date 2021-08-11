@@ -23,13 +23,13 @@
   }
 
   .logo {
+    @include sans;
+
     font-size: 40px;
     letter-spacing: 0.29px;
     text-transform: lowercase;
     margin: 0;
-    line-height: 38px;
     padding: 0;
-    text-shadow: 1px 1px 0 rgba(#fff, 0.6);
     pointer-events: none;
     -webkit-user-select: none;
     text-align: left;

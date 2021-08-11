@@ -42,7 +42,7 @@ export default function Blog() {
       <section className={styles.index}>
         <div className={styles.wrapper}>
           <h1 className={styles.logo}>
-            <img src='/static/images/logo.svg'/>
+            Will Read
           </h1>
 
           <section>

@@ -40,6 +40,7 @@ export default class extends React.Component<PostProps> {
         </Head>
         <div className={styles.wrapper}>
           <h1>{this.props.post.data.title}</h1>
+          <h2>{this.props.post.data.date}</h2>
           <Markdown
             source={this.props.content}
           />
