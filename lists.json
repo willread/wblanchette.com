@@ -1,0 +1,102 @@
+callback({
+  "Tools": {
+    "keys": {
+      "name": "Tool Name",
+      "url": "http://www.tool.com",
+      "platform": [
+        "Mac",
+        "Windows",
+        "Cross-Platform",
+        "Web"
+      ]
+    },
+    "items": [
+      {
+        "name": "Coda",
+        "url": "http://www.panic.com/coda",
+        "platform": "Mac"
+      },
+      {
+        "name": "Balsamiq Mockups",
+        "url": "http://www.balsamiq.com",
+        "platform": "Cross-Platform"
+      },
+      {
+        "name": "Adobe Creative Suite",
+        "url": "http://www.adobe.com/ca/products/creativecloud.html",
+        "platform": "Cross-Platform"
+      }
+    ]
+  },
+  "Work Books": {
+    "keys": {
+      "name": "",
+      "url": "http://",
+      "rating": [1,2,3,4,5]
+    },
+    items: []
+  },
+  "Fiction Books": {
+    "keys": {
+      "name": "",
+      "url": "http://",
+      "rating": [1,2,3,4,5]
+    },
+    items: []
+  },
+  "Non-fiction Books": {
+    "keys": {
+      "name": "",
+      "url": "http://",
+      "rating": [1,2,3,4,5]
+    },
+    items: []
+  },
+  "Board Games": {
+    "keys": {
+      "publisher": "Publisher Name",
+      "title": "Title",
+      "status": [
+        "Have",
+        "Want"
+      ]
+    },
+    "items": [
+      {
+        "publisher": "Rio Grande Games",
+        "title": "Carcasonne",
+        "status": "Have"
+      },
+      {
+        "publisher": "Mayfair Games",
+        "title": "Settlers of Catan",
+        "status": "Have"
+      },
+      {
+        "publisher": "Rio Grande Games",
+        "title": "Galaxy Trucker",
+        "status": "Have"
+      },
+      {
+        "publisher": "999 Games",
+        "title": "Pandemic",
+        "status": "Have"
+      },
+      {
+        "publisher": "Unknown",
+        "title": "Zombie Dice",
+        "status": "Have"
+      }
+    ]
+  }
+  /*
+  "template": {
+    "keys": {
+      "name": "",
+      "url": "http://",
+      "rating": [1,2,3,4,5]
+    },
+    items: []
+  }
+  */
+})
